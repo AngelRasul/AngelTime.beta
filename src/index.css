@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer utilities {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+html, body {
+  overscroll-behavior: none;
+  background-color: #FCF6F8;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.dark, html.dark body {
+  background-color: #140D10;
+  color: #F5E9ED;
+}
+
+.font-arabic {
+  font-family: 'Amiri', serif;
+}
+
+@keyframes blob-morph {
+  0% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%; }
+  25% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  75% { border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; }
+  100% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%; }
+}
+
+@keyframes blob-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes scan-line {
+  0% { top: 0%; opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+.animate-scan {
+  animation: scan-line 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}

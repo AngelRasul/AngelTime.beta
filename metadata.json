@@ -1,0 +1,8 @@
+{
+  "name": "beta 2",
+  "description": "Приложение для отслеживания времени намаза и чтения Корана в нежно-розовой палитре Material You.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
